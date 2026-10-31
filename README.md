@@ -2,23 +2,39 @@
 
 المستودع المرجعي المشترك لهوية وتصميم وهندسة منتجات **ناوي**. يحدد كيف تبدو المنتجات، وكيف تُبنى، وكيف يتعامل معها وكلاء البرمجة بالذكاء الاصطناعي.
 
-> **المبدأ:** هوية مشتركة، وتجارب متخصصة، وهندسة قابلة للصيانة.
+> **المبدأ:** هوية مشتركة، وتجارب متخصصة، وهندسة قابلة للصيانة، وادعاءات مبنية على أدلة.
 
 ## ابدأ من هنا
 
+### AI Governance
+1. [AGENTS.md](AGENTS.md) — تعليمات جذرية لوكلاء البرمجة.
+2. [GOVERNANCE.md](GOVERNANCE.md) — نموذج الحوكمة وتصنيف المعرفة.
+3. [PRODUCT-FACTS.md](PRODUCT-FACTS.md) — الحقائق المؤكدة والقرارات والافتراضات والمجهولات.
+4. [SECURITY-AND-APPROVALS.md](SECURITY-AND-APPROVALS.md) — الأمان والإجراءات التي تحتاج موافقة.
+5. [KNOWN-LIMITATIONS.md](KNOWN-LIMITATIONS.md) — ما لم يُنفذ أو لم يتم التحقق منه.
+6. [Skills](.agents/skills/) — مهارات متخصصة للمهام المتكررة.
+7. [DECISIONS](DECISIONS/) — سجل القرارات المعمارية.
+
 ### التصميم
-1. [دليل نظام التصميم](DESIGN-SYSTEM.md)
-2. [الأساسيات البصرية](foundations/README.md)
+1. [Design System](DESIGN-SYSTEM.md)
+2. [Foundations](foundations/README.md)
 3. [Design Tokens CSS](tokens/tokens.css) و[JSON](tokens/tokens.json)
-4. [المكونات ونظام الأيقونات](components/README.md)
-5. [الأصول المرئية وترخيص SVG](assets/icons/README.md)
-6. [أنماط التجربة](patterns/README.md)
+4. [Components and Icons](components/README.md)
+5. [Assets and SVG licenses](assets/icons/README.md)
 
 ### الهندسة والتطوير
 1. [Technology Stack](TECHNOLOGY-STACK.md)
 2. [Engineering Standards](ENGINEERING-STANDARDS.md)
-3. [Starter Template](starter/react-vite/README.md)
-4. [AI Guidelines](AI-GUIDELINES.md)
+3. [Architecture Reference](ARCHITECTURE.md)
+4. [Starter Template](starter/react-vite/README.md)
+5. [AI Guidelines](AI-GUIDELINES.md)
+
+## Automated checks
+
+- `Nawy Governance`: validates required governance files, Agent Skills manifests, token JSON and starter metadata.
+- `Nawy Starter Template CI`: runs typecheck, tests and production build for the starter when it changes.
+
+هذه الفحوصات لا تثبت أن كل تطبيق جاهز للإنتاج ولا تضمن منع كل هلوسة؛ راجع نتائج CI الفعلية قبل الادعاء بالنجاح.
 
 ## القرارات الأساسية
 
@@ -28,10 +44,7 @@
 - Default Stack: React + TypeScript + Vite + Tailwind CSS.
 - Local-first عند ملاءمته: Dexie + IndexedDB.
 - أيقونات الواجهة: Google Material Symbols SVG — Outlined.
-- الاختبارات: Vitest + Testing Library، وPlaywright لتدفقات E2E.
 
 ## سياسة التغيير
 
-أي تغيير في قرار مشترك يجب أن يوضح المشكلة والبدائل والأثر على التطبيقات الحالية وخطة الترحيل إن وجدت. حدّث التوثيق والقالب معًا عند تغيير الستاك. راجع [CHANGELOG](CHANGELOG.md).
-
-القيم المقترحة أو الإصدارات المرجعية لا تُعامل كحقائق دائمة؛ راجع ملفات المعايير عند إنشاء مشروع أو ترقية dependencies.
+أي تغيير في قرار مشترك يجب أن يوضح المشكلة والبدائل والأثر على التطبيقات الحالية. حدّث التوثيق وADR والقالب عند الحاجة. راجع [CHANGELOG](CHANGELOG.md).

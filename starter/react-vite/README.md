@@ -38,6 +38,7 @@ import HomeIcon from "./assets/icons/home.svg?react";
 استورد SVG assets المحلية فقط، من مصادر معتمدة. راجع [نظام الأيقونات](../../components/README.md#icon-system).
 
 ## أوامر المشروع
+
 ```bash
 pnpm dev
 pnpm typecheck
@@ -46,7 +47,17 @@ pnpm build
 pnpm preview
 ```
 
+## CI
+
+يوجد workflow في المستودع للتحقق من القالب عبر:
+- TypeScript typecheck.
+- Vitest unit/component tests.
+- Production build.
+
+لأن قالب البداية لا يحتوي lockfile، ينفذ CI تثبيتًا مؤقتًا غير مقفل. عند نسخ القالب إلى تطبيق، أنشئ lockfile واحفظه، ثم اجعل CI الخاص بالتطبيق يستخدم تثبيتًا مقفلًا.
+
 ## إضافات عند الحاجة
+
 ```bash
 pnpm add react-router
 pnpm add @tanstack/react-query

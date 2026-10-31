@@ -1,0 +1,49 @@
+name: Nawy Starter Template CI
+
+on:
+  push:
+    paths:
+      - "starter/react-vite/template/**"
+      - ".github/workflows/starter-template.yml"
+  pull_request:
+    paths:
+      - "starter/react-vite/template/**"
+      - ".github/workflows/starter-template.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: nawy-starter-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test-starter:
+    name: Typecheck, test and production build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: starter/react-vite/template
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          package-manager-cache: false
+      - name: Install pnpm
+        run: npm install --global pnpm@12.7.0
+      - name: Install starter dependencies
+        # The template intentionally omits a lockfile. The consumer app must generate and commit one.
+        run: pnpm install --no-frozen-lockfile
+      - name: Typecheck
+        run: pnpm typecheck
+      - name: Unit and component tests
+        run: pnpm test
+      - name: Production build
+        run: pnpm build

@@ -1,0 +1,69 @@
+name: Nawy Governance
+
+on:
+  push:
+    paths:
+      - "AGENTS.md"
+      - "GOVERNANCE.md"
+      - "PRODUCT-FACTS.md"
+      - "ARCHITECTURE.md"
+      - "GLOSSARY.md"
+      - "KNOWN-LIMITATIONS.md"
+      - "SECURITY-AND-APPROVALS.md"
+      - "TECHNOLOGY-STACK.md"
+      - "ENGINEERING-STANDARDS.md"
+      - "AI-GUIDELINES.md"
+      - "DECISIONS/**"
+      - ".agents/skills/**"
+      - "assets/icons/**"
+      - "components/**"
+      - "tokens/**"
+      - "starter/react-vite/**"
+      - "scripts/**"
+      - ".github/workflows/**"
+  pull_request:
+    paths:
+      - "AGENTS.md"
+      - "GOVERNANCE.md"
+      - "PRODUCT-FACTS.md"
+      - "ARCHITECTURE.md"
+      - "GLOSSARY.md"
+      - "KNOWN-LIMITATIONS.md"
+      - "SECURITY-AND-APPROVALS.md"
+      - "TECHNOLOGY-STACK.md"
+      - "ENGINEERING-STANDARDS.md"
+      - "AI-GUIDELINES.md"
+      - "DECISIONS/**"
+      - ".agents/skills/**"
+      - "assets/icons/**"
+      - "components/**"
+      - "tokens/**"
+      - "starter/react-vite/**"
+      - "scripts/**"
+      - ".github/workflows/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: nawy-governance-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate-governance:
+    name: Validate governance files and skill manifests
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          package-manager-cache: false
+      - name: Validate repository rules
+        run: node scripts/validate-governance.mjs
