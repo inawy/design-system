@@ -1,0 +1,23 @@
+/* Starter snapshot; keep aligned with the source Nawy tokens. */
+:root {
+  --nawy-color-brand: #3D7BFF;
+  --nawy-font-family: "Cairo", "Segoe UI", Tahoma, Arial, sans-serif;
+  --nawy-color-bg: #0D1117;
+  --nawy-color-surface: #151B23;
+  --nawy-color-text: #F2F4F7;
+  --nawy-color-muted: #A0A8B5;
+  --nawy-color-line: #303A48;
+}
+[data-theme="light"] {
+  --nawy-color-bg: #F7F8FA;
+  --nawy-color-surface: #FFFFFF;
+  --nawy-color-text: #17202B;
+  --nawy-color-muted: #667085;
+  --nawy-color-line: #E4E7EC;
+}
+@theme {
+  --color-brand: var(--nawy-color-brand);
+  --color-surface: var(--nawy-color-surface);
+  --color-muted: var(--nawy-color-muted);
+  --color-line: var(--nawy-color-line);
+}
