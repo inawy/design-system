@@ -12,8 +12,10 @@
 3. [PRODUCT-FACTS.md](PRODUCT-FACTS.md) — الحقائق المؤكدة والقرارات والافتراضات والمجهولات.
 4. [SECURITY-AND-APPROVALS.md](SECURITY-AND-APPROVALS.md) — الأمان والإجراءات التي تحتاج موافقة.
 5. [KNOWN-LIMITATIONS.md](KNOWN-LIMITATIONS.md) — ما لم يُنفذ أو لم يتم التحقق منه.
-6. [Skills](.agents/skills/) — مهارات متخصصة للمهام المتكررة.
-7. [DECISIONS](DECISIONS/) — سجل القرارات المعمارية.
+6. [Skill Catalog](SKILL-CATALOG.md) — فهرس المهارات المشتركة ومتى تستخدمها.
+7. [Skills](.agents/skills/) — ملفات المهارات التي يحمّلها الوكيل عند الحاجة.
+8. [Third-party notices](THIRD-PARTY-NOTICES.md) و[Sources registry](agent-skills.sources.json) — مصدر وترخيص وإصدار المهارات الخارجية.
+9. [DECISIONS](DECISIONS/) — سجل القرارات المعمارية.
 
 ### التصميم
 1. [Design System](DESIGN-SYSTEM.md)
@@ -28,10 +30,11 @@
 3. [Architecture Reference](ARCHITECTURE.md)
 4. [Starter Template](starter/react-vite/README.md)
 5. [AI Guidelines](AI-GUIDELINES.md)
+6. [Optional technology skills](docs/optional-agent-skills.md)
 
 ## Automated checks
 
-- `Nawy Governance`: validates required governance files, Agent Skills manifests, token JSON and starter metadata.
+- `Nawy Governance`: validates required governance files, all Agent Skills manifests and workflows, source provenance, token JSON and starter metadata.
 - `Nawy Starter Template CI`: runs typecheck, tests and production build for the starter when it changes.
 
 هذه الفحوصات لا تثبت أن كل تطبيق جاهز للإنتاج ولا تضمن منع كل هلوسة؛ راجع نتائج CI الفعلية قبل الادعاء بالنجاح.
