@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "catalogVersion": "1.0.0",
+  "reviewedAt": "2026-10-31",
+  "skills": {
+    "code-review": { "origin": "nawy", "scope": "general" },
+    "database-migration": { "origin": "nawy", "scope": "data" },
+    "debug-bug": { "origin": "nawy", "scope": "general" },
+    "implement-feature": { "origin": "nawy", "scope": "general" },
+    "release-readiness": { "origin": "nawy", "scope": "release" },
+    "ui-implementation": { "origin": "nawy", "scope": "ui" },
+    "local-first-engineering": { "origin": "nawy", "scope": "data" },
+    "data-safety-and-migrations": { "origin": "nawy", "scope": "data" },
+    "arabic-rtl-ux": { "origin": "nawy", "scope": "ui" },
+    "pwa-offline-audit": { "origin": "nawy", "scope": "web-platform" },
+    "mobile-interaction-review": { "origin": "nawy", "scope": "ui" },
+    "privacy-security-review": { "origin": "nawy", "scope": "security" },
+    "web-app-testing": {
+      "origin": "nawy",
+      "scope": "testing",
+      "references": ["https://github.com/anthropics/skills/tree/main/skills/webapp-testing"],
+      "note": "Nawy-authored adaptation; no upstream code or text is vendored."
+    },
+    "web-interface-review": {
+      "origin": "nawy",
+      "scope": "ui",
+      "references": ["https://github.com/vercel-labs/web-interface-guidelines"],
+      "note": "Nawy-authored checklist; upstream guidelines are not vendored."
+    },
+    "vercel-react-best-practices": {
+      "origin": "third-party",
+      "author": "Vercel Engineering",
+      "license": "MIT",
+      "version": "1.0.0",
+      "repository": "https://github.com/vercel-labs/agent-skills",
+      "path": "skills/react-best-practices",
+      "commit": "1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62",
+      "artifacts": ["UPSTREAM-SKILL.md", "UPSTREAM-REFERENCE.md"]
+    },
+    "vercel-composition-patterns": {
+      "origin": "third-party",
+      "author": "Vercel Engineering",
+      "license": "MIT",
+      "version": "1.0.0",
+      "repository": "https://github.com/vercel-labs/agent-skills",
+      "path": "skills/composition-patterns",
+      "commit": "1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62",
+      "artifacts": ["UPSTREAM-SKILL.md", "UPSTREAM-REFERENCE.md"]
+    }
+  },
+  "optionalPacks": {
+    "supabase": {
+      "repository": "https://github.com/supabase/agent-skills",
+      "commitReviewed": "c9be0e931b7930f7d02126d04774d904c381e7d7",
+      "skills": ["supabase", "supabase-postgres-best-practices"],
+      "defaultInstall": false,
+      "reason": "Only add when the target product has explicitly adopted Supabase."
+    },
+    "expo": {
+      "repository": "https://github.com/expo/skills",
+      "commitReviewed": "05754e71d02abe0d2d7a2fb5259ccac41f5ea59c",
+      "defaultInstall": false,
+      "reason": "Framework and EAS-specific; select only for an approved Expo/React Native project."
+    }
+  }
+}
