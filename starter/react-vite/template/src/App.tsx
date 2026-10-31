@@ -1,4 +1,5 @@
 import { useState } from "react";
+import HomeIcon from "./assets/icons/home.svg?react";
 
 export default function App() {
   const [started, setStarted] = useState(false);
@@ -6,7 +7,10 @@ export default function App() {
   return (
     <main className="mx-auto flex min-h-svh w-full max-w-3xl flex-col justify-center gap-6 px-5 py-12">
       <div className="space-y-2">
-        <p className="text-sm font-medium text-brand">Nawy · Starter</p>
+        <p className="flex items-center gap-2 text-sm font-medium text-brand">
+          <HomeIcon aria-hidden="true" className="size-5 fill-current" />
+          Nawy · Starter
+        </p>
         <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
           ابدأ مشروع ناوي من هنا
         </h1>

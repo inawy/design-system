@@ -1,6 +1,6 @@
 # Nawy React + Vite Starter
 
-قالب بداية لتطبيقات ناوي الجديدة. يوفر الحد الأدنى المتفق عليه: React، TypeScript، Vite، Tailwind CSS، Dexie، Zod، وVitest.
+قالب بداية لتطبيقات ناوي الجديدة. يوفر الحد الأدنى المتفق عليه: React، TypeScript، Vite، Tailwind CSS، Dexie، Zod، Vitest، واستيراد SVG كـ React components.
 
 ## ما الذي يتضمنه؟
 - React + TypeScript + Vite.
@@ -10,10 +10,11 @@
 - Dexie database entry point محلي.
 - Zod للتحقق من البيانات.
 - Vitest + Testing Library + jsdom.
+- `vite-plugin-svgr` لاستيراد SVG عبر `?react`.
+- عينة Google Material Symbols Outlined SVG مع ملف الترخيص والإسناد.
 - واجهة عربية RTL كبداية.
 
 ## بدء مشروع جديد
-
 1. انسخ محتويات مجلد `template/` إلى مستودع المشروع الجديد.
 2. غيّر `name` في `package.json` واسم قاعدة البيانات في `src/lib/database.ts`.
 3. ثبّت Node.js 24 LTS وpnpm 12.x.
@@ -26,18 +27,26 @@ pnpm dev
 
 ثم احفظ `pnpm-lock.yaml` في Git. لا تبدأ التطوير الجماعي قبل حفظ lockfile.
 
-## أوامر المشروع
+## استخدام SVG
 
+```tsx
+import HomeIcon from "./assets/icons/home.svg?react";
+
+<HomeIcon aria-hidden="true" className="size-6 fill-current" />
+```
+
+استورد SVG assets المحلية فقط، من مصادر معتمدة. راجع [نظام الأيقونات](../../components/README.md#icon-system).
+
+## أوامر المشروع
 ```bash
-pnpm dev         # local development
-pnpm typecheck   # TypeScript checks
-pnpm test        # unit/component tests
-pnpm build       # production build
-pnpm preview     # preview production build
+pnpm dev
+pnpm typecheck
+pnpm test
+pnpm build
+pnpm preview
 ```
 
 ## إضافات عند الحاجة
-
 ```bash
 pnpm add react-router
 pnpm add @tanstack/react-query

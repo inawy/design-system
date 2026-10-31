@@ -10,33 +10,15 @@
 1. [دليل نظام التصميم](DESIGN-SYSTEM.md)
 2. [الأساسيات البصرية](foundations/README.md)
 3. [Design Tokens CSS](tokens/tokens.css) و[JSON](tokens/tokens.json)
-4. [المكونات](components/README.md) و[أنماط التجربة](patterns/README.md)
+4. [المكونات ونظام الأيقونات](components/README.md)
+5. [الأصول المرئية وترخيص SVG](assets/icons/README.md)
+6. [أنماط التجربة](patterns/README.md)
 
 ### الهندسة والتطوير
-1. [Technology Stack](TECHNOLOGY-STACK.md) — التقنيات الافتراضية ومتى نختار غيرها.
-2. [Engineering Standards](ENGINEERING-STANDARDS.md) — قواعد المعمارية والكود والبيانات والأمان والاختبارات.
-3. [Starter Template](starter/react-vite/README.md) — نقطة بداية لمشروع React + TypeScript + Vite.
-4. [AI Guidelines](AI-GUIDELINES.md) — تعليمات وكلاء Vibe Coding.
-
-## هيكل المستودع
-
-```text
-design-system/
-├── README.md
-├── DESIGN-SYSTEM.md
-├── TECHNOLOGY-STACK.md
-├── ENGINEERING-STANDARDS.md
-├── AI-GUIDELINES.md
-├── CHANGELOG.md
-├── foundations/
-├── tokens/
-├── components/
-├── patterns/
-└── starter/
-    └── react-vite/
-        ├── README.md
-        └── template/
-```
+1. [Technology Stack](TECHNOLOGY-STACK.md)
+2. [Engineering Standards](ENGINEERING-STANDARDS.md)
+3. [Starter Template](starter/react-vite/README.md)
+4. [AI Guidelines](AI-GUIDELINES.md)
 
 ## القرارات الأساسية
 
@@ -45,11 +27,11 @@ design-system/
 - دعم RTL للعربية وLTR للإنجليزية.
 - Default Stack: React + TypeScript + Vite + Tailwind CSS.
 - Local-first عند ملاءمته: Dexie + IndexedDB.
+- أيقونات الواجهة: Google Material Symbols SVG — Outlined.
 - الاختبارات: Vitest + Testing Library، وPlaywright لتدفقات E2E.
-- اختيار Next.js أو backend أو cloud database يكون بناءً على احتياج موثق.
 
 ## سياسة التغيير
 
 أي تغيير في قرار مشترك يجب أن يوضح المشكلة والبدائل والأثر على التطبيقات الحالية وخطة الترحيل إن وجدت. حدّث التوثيق والقالب معًا عند تغيير الستاك. راجع [CHANGELOG](CHANGELOG.md).
 
-القيم المقترحة أو الإصدارات المرجعية لا تُعامل كحقائق دائمة؛ راجع صفحة Technology Stack عند إنشاء مشروع أو ترقية dependencies.
+القيم المقترحة أو الإصدارات المرجعية لا تُعامل كحقائق دائمة؛ راجع ملفات المعايير عند إنشاء مشروع أو ترقية dependencies.
